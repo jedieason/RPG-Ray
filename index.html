@@ -92,7 +92,11 @@
 
             if (userInput.includes('挑戰')) {
                 responseText = '要挑戰我？God did。你們只要在這個遊戲中贏過我，就算挑戰成功吧！';
-            }  else if ((userInput.includes('贏') || userInput.includes('敗')) && userInput.includes('金正恩')) {
+            }   else if (userInput.includes('I won')) {
+                responseText = '恭喜你們成功從高中畢業啦～回去跟麥克老爹報喜吧～';
+            }   else if (userInput.includes('I lost')) {
+                responseText = '就這？真菜阿，5分鐘後再回來挑戰我吧！';
+            } else if ((userInput.includes('贏') || userInput.includes('敗')) && userInput.includes('金正恩')) {
                 responseText = '當然...不行啊廢話，他手握一拖拉庫火力，我就兩隻手兩隻腳，又不是在看007，你要找人當忙建議你去找記者問問，他的人脈特別廣。';
             } 
             else if (userInput.includes('加') && (userInput.includes('提瓦特') || userInput.includes('防衛隊'))) {
