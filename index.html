@@ -92,20 +92,17 @@
 
             if (userInput.includes('挑戰')) {
                 responseText = '要挑戰我？God did。你們只要在這個遊戲中贏過我，就算挑戰成功吧！';
-            }   else if (userInput.includes('I won')) {
+            } else if (userInput.includes('I won')) {
                 responseText = '恭喜你們成功從高中畢業啦～回去跟麥克老爹報喜吧～';
-            }   else if (userInput.includes('I lost')) {
-                responseText = '就這？真菜阿，5分鐘後再回來挑戰我吧！';
-            } else if ((userInput.includes('贏') || userInput.includes('敗')) && userInput.includes('金正恩')) {
-                responseText = '當然...不行啊廢話，他手握一拖拉庫火力，我就兩隻手兩隻腳，又不是在看007，你要找人當忙建議你去找記者問問，他的人脈特別廣。';
-            } 
-            else if (userInput.includes('加') && (userInput.includes('提瓦特') || userInput.includes('防衛隊'))) {
-                responseText = '可以是可以，但你們得先幫我一個小忙，最近我挺喜歡泰勒絲的，你能想辦法幫我安排跟他會面嗎？我印象中萬事通的消息還挺靈通的，可以找他問問。';
-            } 
-            else if (userInput.includes('給你專輯')) {
-                responseText = '耶～呼～賺翻啦～好的，我就加入那什麼提米防衛隊吧，反正我也閒閒沒事做。';
-            } 
-            else {
+            } else if (userInput.includes('I lost')) {
+                    responseText = '就這？真菜阿，5分鐘後再回來挑戰我吧！';
+            } else if (userInput.includes('幫') && userInput.includes('麥克阿瑟') && userInput.includes('金正N')) {
+                responseText = '當然...不行啊廢話，他手握一拖拉庫火力，我就兩手兩腳，又不是在看007，我建議你去找人脈很廣的人，或許他會有合適的人選';
+            } else if (userInput.includes('加入') && userInput.includes('提瓦特防衛隊')) {
+                responseText = '可以是可以，但你們得先幫我一個小忙，最近我挺喜歡泰勒絲的歌，你能想辦法幫我要到她的專輯嗎？我印象中有個消息靈通的傢伙，也許可以找他問問看';
+            } else if (userInput.includes('給專輯')) {
+                responseText = '耶～呼～賺翻啦～這小費你們收著，至於那什麼提米防衛隊，我就加入吧，反正我也閒閒沒事做。';
+            } else {
                 responseText = 'God did! God did! God did!';
             }
 
