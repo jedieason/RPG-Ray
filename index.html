@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPG Ray</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .input-container input, .response-container {
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+        }
+        .full-width-image {
+            width: 100%;
+            height: auto;
+        }
+        .input-container {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: none;
+            padding: 20px;
+            border-radius: 10px;
+            border: none;
+            width: 90%;
+            max-width: 600px;
+            bottom: 6%;
+            display: flex;
+            align-items: center;
+            z-index: 10;
+        }
+        .input-container input {
+            border-radius: 10px;
+            border: 2px solid #ccc;
+            padding: 10px;
+            flex-grow: 1;
+            outline: none;
+        }
+        .input-container button {
+            border-radius: 10px;
+            border: none;
+            background-color: #000;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-left: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .input-container button img {
+            width: 20px;
+            height: 20px;
+        }
+        .response-container {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #000;
+            width: 80%;
+            max-width: 600px;
+            bottom: 20%;
+            display: none;
+        }
+    </style>
+    </style>
+</head>
+<body>
+    <img src="ray.png" alt="全螢幕圖片" class="full-width-image">
+    <div class="input-container">
+        <input type="text" id="user-input" placeholder="你好，我是Ray！">
+        <button onclick="handleResponse()">
+            <img src="send-icon.svg" alt="傳送">
+        </button>
+    </div>
+    <div id="response-container" class="response-container" style="display: none;">
+    </div>
+
+    <script>
+        function handleResponse() {
+            const userInput = document.getElementById('user-input').value;
+            const responseContainer = document.getElementById('response-container');
+            let responseText = '';
+
+            if (userInput.includes('挑戰')) {
+                responseText = '要挑戰我？God did。你們只要在這個遊戲中贏過我，就算挑戰成功吧！';
+            }  else if ((userInput.includes('贏') || userInput.includes('敗')) && userInput.includes('金正恩')) {
+                responseText = '當然...不行啊廢話，他手握一拖拉庫火力，我就兩隻手兩隻腳，又不是在看007，你要找人當忙建議你去找記者問問，他的人脈特別廣。';
+            } 
+            else if (userInput.includes('加入') && (userInput.includes('提瓦特') || userInput.includes('防衛隊'))) {
+                responseText = '可以是可以，但你們得先幫我一個小忙，最近我挺喜歡泰勒絲的，你能想辦法幫我安排跟他會面嗎？我印象中萬事通的消息還挺靈通的，可以找他問問。';
+            } 
+            else if (userInput.includes('給你專輯')) {
+                responseText = '耶～呼～賺翻啦～好的，我就加入那什麼提米防衛隊吧，反正我也閒閒沒事做。';
+            } 
+            else {
+                responseText = 'God did! God did! God did!';
+            }
+
+            typeWriter(responseText, responseContainer);
+        }
+
+        function typeWriter(text, container) {
+            container.style.display = 'block';
+            container.innerHTML = '';
+            let i = 0;
+            function type() {
+                if (i < text.length) {
+                    container.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, 50);
+                }
+            }
+            type();
+        }
+    </script>
+</body>
+</html>
